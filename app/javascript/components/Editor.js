@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Header from './Header';
 import EventList from './EventList';
-import { Routes, Route, useNavigate } from 'react-router-dom';
 import Event from './Event';
 import EventForm from './EventForm';
 import { success } from '../helpers/notifications';
@@ -64,7 +64,7 @@ const Editor = () => {
 
         success('Event Deleted!');
         navigate('/events');
-        setEvents(events.filter(event => event.id !== eventId));
+        setEvents(events.filter((event) => event.id !== eventId));
       } catch (error) {
         handleAjaxError(error);
       }
@@ -82,33 +82,33 @@ const Editor = () => {
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-        }
+        },
       );
-  
+
       if (!response.ok) throw Error(response.statusText);
-  
+
       const newEvents = events;
       const idx = newEvents.findIndex((event) => event.id === updatedEvent.id);
       newEvents[idx] = updatedEvent;
       setEvents(newEvents);
-  
+
       success('Event Updated!');
       navigate(`/events/${updatedEvent.id}`);
     } catch (error) {
       handleAjaxError(error);
     }
-  }; 
+  };
 
   return (
     <>
       <Header />
       <div className="grid">
         {isLoading ? (
-          <p className='loading'>Loading...</p>
+          <p className="loading">Loading...</p>
         ) : (
           <>
             <EventList events={events} />
-  
+
             <Routes>
               <Route
                 path=":id"
@@ -125,7 +125,6 @@ const Editor = () => {
       </div>
     </>
   );
-}
-
+};
 
 export default Editor;
