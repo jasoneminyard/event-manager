@@ -174,23 +174,23 @@ const EventForm = ({ events, onSave }) => {
   );
 };
 
-  export default EventForm;
+export default EventForm;
 
-  EventForm.propTypes = {
-    events: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        event_type: PropTypes.string.isRequired,
-        event_date: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        speaker: PropTypes.string.isRequired,
-        host: PropTypes.string.isRequired,
-        published: PropTypes.bool.isRequired,
-      })
-    ),
-    onSave: PropTypes.func.isRequired,
-  };
+EventForm.propTypes = {
+  events: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      event_type: PropTypes.string.isRequired,
+      event_date: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      speaker: PropTypes.string.isRequired,
+      host: PropTypes.string.isRequired,
+      published: PropTypes.bool.isRequired,
+    }),
+  ),
+  onSave: PropTypes.func.isRequired,
+};
 
-  EventForm.defaultProps = {
-    events: [],
-  };
+EventForm.defaultProps = {
+  events: [],
+};
