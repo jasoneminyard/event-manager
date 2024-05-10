@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 const EventList = ({ events }) => {
   const renderEvents = (eventArray) => {
     eventArray.sort((a, b) => new Date(b.event_date) - new Date(a.event_date));
-  
+
     return eventArray.map((event) => (
       <li key={event.id}>
         <NavLink to={`/events/${event.id}`}>
@@ -26,7 +26,6 @@ const EventList = ({ events }) => {
       <ul>{renderEvents(events)}</ul>
     </section>
   );
-  
 };
 
 EventList.propTypes = {
