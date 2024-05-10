@@ -15,7 +15,7 @@
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
     "watch": "esbuild app/javascript/*.* --watch --bundle --outdir=app/assets/builds --loader:.js=jsx",
-    "lint": "eslint app/javascript/components/EventList.js"
+    "lint": "eslint app/javascript/"
   },
   "devDependencies": {
     "eslint": "^8.2.0",
