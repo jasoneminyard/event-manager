@@ -5,7 +5,7 @@ export const handleAjaxError = (err) => {
   console.error(err);
 };
 
-export const isEmptyObject = obj => Object.keys(obj).length === 0;
+export const isEmptyObject = (obj) => Object.keys(obj).length === 0;
 
 export const validateEvent = (event) => {
   const errors = {};
@@ -31,13 +31,12 @@ export const validateEvent = (event) => {
   }
 
   return errors;
-}
+};
 
 export const formatDate = (d) => {
-    const YYYY = d.getFullYear();
-    const MM = `0${d.getMonth() + 1}`.slice(-2);
-    const DD = `0${d.getDate()}`.slice(-2);
-  
-    return `${YYYY}-${MM}-${DD}`;
-  };
-  
+  const YYYY = d.getFullYear();
+  const MM = `0${d.getMonth() + 1}`.slice(-2);
+  const DD = `0${d.getDate()}`.slice(-2);
+
+  return `${YYYY}-${MM}-${DD}`;
+};
