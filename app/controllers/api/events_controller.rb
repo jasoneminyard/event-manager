@@ -3,7 +3,6 @@ class Api::EventsController < ApplicationController
   
     def index
       @events = Event.all
-      sleep 5 # this is only to see the Loading..... status
       render json: @events
     end
   
