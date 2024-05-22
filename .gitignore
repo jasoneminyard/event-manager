@@ -38,3 +38,6 @@
 !/app/assets/builds/.keep
 
 /node_modules
+
+# ignore ENVs
+/config/environment_variables.rb
